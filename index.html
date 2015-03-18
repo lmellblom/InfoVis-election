@@ -1,0 +1,98 @@
+<!-- Done by Linnea Malcherek and Linnéa Mellblom. 2015 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Election</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1>VALRESULTAT 2010</h1>
+        
+        <div id="mapContent">
+            <div id="map">
+            </div>
+
+            <div id="filter">
+                <label for="income" 
+                     style="display: inline-block; width: 240px; text-align: left">
+                     Filtrera på medelinkomst. Top=<span id="income-value">…</span> kommuner. 
+                </label><br>
+           &nbsp; 290 <input type="range" step="1" id="income" style="width:64%;"> 1<br>
+
+            <label for="populations" 
+                     style="display: inline-block; width: 240px; text-align: left">
+                     Filtrera på befolkning, över <span id="populations-value">…</span>. 
+                </label><br>
+                <span id="populations-min"></span> <input type="range" id="populations" style="width:63%;"> <span id="populations-max"></span>
+                <br><br>
+
+                <!-- For filtering the map, nicer buttons.  -->
+                <ul class="color-map">
+                    Färglägg kartan med avseende på vinnade:
+                    <li>
+                        <input type="radio" id="Block" value="Block" name="color" class="colorTheMap" checked />
+                        <label for="Block">Block</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="Party" value="Party" name="color" class="colorTheMap" />
+                        <label for="Party">Parti</label>
+                    </li>
+                </ul>
+            <!-- Funkar inte fullt ut så bortkommenterat sålänge. Var färglägga avseende på partiernas stöd i landet typ.
+                <button onclick="map.colorOnPartyClicked('Moderaterna')">Färglägg på moderaternas stöd</button>
+                <button onclick="map.colorOnPartyClicked('Sverigedemokraterna')">Färglägg på sd stöd</button>-->
+            </div>
+        </div>
+
+        <div id="info">
+            <div id="mun">
+            </div>
+
+            <div id="statistic">
+                <div id="inc">
+                </div>
+
+                <div id="rank">
+                </div>
+
+                <div id="ppl">
+                </div>
+            </div>            
+        </div>
+        <div id="sim">
+            <h3 id="kommuner">Liknande kommuner: </h3>
+            <form>
+                Visa top kommuner baserat på: 
+                <input type="radio" name="sorting" class="dataMining" value="parties" checked>
+                Partier
+                <input type="radio" name="sorting" class="dataMining" value="block">
+                Block
+                <input type="radio" name="sorting" class="dataMining" value="income">
+                Inkomst
+                <input type="radio" name="sorting" class="dataMining" value="people">
+                Befolkning
+            </form> 
+            <div id="firstDonut"></div>
+            <div id="secondDonut"></div>
+            <div id="thirdDonut"></div>
+        </div>
+
+<!-- Load scripts and all functionality-->
+    <script type="text/javascript" src="js/vendor/d3.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="js/vendor/topojson.v1.min.js"></script>
+
+    <script type="text/javascript" src="js/population.js"></script>
+    <script type="text/javascript" src="js/election.js"></script>
+    <script type="text/javascript" src="js/income.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    </body>
+
+</html>

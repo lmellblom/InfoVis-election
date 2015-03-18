@@ -1,0 +1,245 @@
+/*
+    Styling for everything
+    Linnea Malcherek and Linnéa Mellblom
+    2015
+*/
+
+html {
+    font-size: 11px;
+    text-align: center;
+    width: 100%; 
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/*making the radio buttons look nice! */
+.color-map {
+     list-style-type:none;
+     margin:25px 0 0 0;
+     padding:0;
+}
+.color-map li {
+     float:left;
+     margin:0 25px 0 0;
+    width:80px;
+    height:30px;
+    position:relative;
+}
+.color-map label, .color-map input {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: #ecf0f1; 
+    border-radius: 8px;
+}
+.color-map input[type="radio"] {
+    opacity:0.01;
+    z-index:100;
+}
+.color-map input[type="radio"]:checked + label,
+.Checked + label {
+    background: #95a5a6;
+}
+.color-map label {
+     padding:4px 4px 4px 25px;
+     border:1px solid #CCC; 
+   }
+/* ---------------------------------------- */
+
+/* Style for the divs */
+#mapContent, #info {
+    float:left;
+    width: 49%;
+    height: 300px;
+    border: 0px solid black;
+    padding: 5px;
+}
+
+#statistic {
+  float: right;
+  margin-top: 20px;
+  width: 35%;
+  height: 300px;
+  border: 0px solid black;
+}
+
+#map {
+    float:left;
+    width: 50%;
+    height: 500px;
+    border: 1px solid gray;
+}
+
+/*Filter buttons*/
+#filter {
+  float: right;
+  padding-left: 2px;
+  width: 45%;
+  text-align: left;
+  margin-top: 20px;
+  border: 0px solid black;
+}
+
+/*Income and the population info*/
+#ppl, #inc, #rank {
+  width: 100%;
+  border: 0px solid black;
+  /*height: 30%;*/
+  text-align: left !important;
+}
+
+h3 {
+  font-size: 12px;
+}
+
+h2{
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+/*id for the headers is pop and */
+.population , .income , .incomeNr {
+position: relative;
+display: inline-block;
+padding-left: 40px;
+text-align: right;
+font-weight: normal;
+font-size: 11px;
+}
+
+.population:before{
+content: ' ';
+width: 20px;
+height: 20px;
+position: absolute;
+left: 0;
+display: block;
+background-size: 15px 15px;
+background: url("icons/people.svg") no-repeat !important;
+}
+
+.income:before{
+content: ' ';
+width: 20px;
+height: 20px;
+position: absolute;
+left: 0;
+display: block;
+background-size: 20px 20px;
+background: url("icons/paperbill.svg") no-repeat !important;
+}
+
+.incomeNr:before {
+content: ' ';
+width: 20px;
+height: 20px;
+position: absolute;
+left: 0;
+display: block;
+background-size: 20px 20px;
+background: url("icons/award52.svg") no-repeat !important;
+}
+
+.income:after{
+  content: '00 kr/år i medel';
+}
+
+.population:after{
+  content: ' invånare';
+}
+
+.similarInfo{
+  text-align: left;
+  margin-left: 60px;
+}
+.similarInfo p{
+  display: block;
+  text-align: left;
+  margin-right: 0px;
+}
+
+/* For the map */
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+.swe_mun:hover{
+    fill: #666666 !important;*/
+    cursor:pointer;
+}
+
+.active {
+    stroke: #000;
+
+}
+.swe_mun  {
+  cursor: pointer;
+}
+
+.mesh {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#kommuner{
+  font-size: 14px;
+}
+
+/* The tooltip over the map */
+.hidden {
+    display: none;
+}
+div.tooltip {
+    color: #222;
+    background: #fff;
+    padding: .5em;
+    text-shadow: #f5f5f5 0 1px 0;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px 0px #a6a6a6;
+    opacity: 0.9;
+    position: absolute;
+}
+
+#sim {
+    float:right;
+    margin: 1px;
+    width: 75%;
+    height: 250px;
+    border: 0px solid black;
+    padding-bottom: 20px;
+}
+
+#firstDonut, #secondDonut, #thirdDonut {
+    float: right;
+    height: 250px;
+    width: 33%;
+    border: 0px solid black;
+}
+
+#firstDonut h3, #secondDonut h3, #thirdDonut h3{
+  cursor:pointer;
+}
+
+/* Valresult */
+#mun {
+    float:left;
+    width: 60%;
+    height: 350px;
+    border: 0px solid black;
+}
+
+#percentParty, #partyName{
+  fill: black;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-weight: normal;
+}
+
+.votes p{
+    display: inline-block;
+    margin-left: 10px;
+}
